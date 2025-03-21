@@ -1,13 +1,20 @@
 <?php
 session_start();
 
+$desc;
+$title;
+
 $page = isset($_GET['page']) ? $_GET['page'] : 'main';
 $path = "pages/$page.php";
 
-require_once "elems/header.php";
+
 if (file_exists($path)) {
-  require_once $path;
+  $content = $path;
 } else {
-  echo "нет такой страницы";
+  $title = "Нет такой страницы";
+  $content = "pages/404.php";
 }
+
+require_once "elems/header.php";
+require_once $content;
 require_once "elems/footer.php";

@@ -1,8 +1,8 @@
 </div>
-    <footer>
-      <div class="container"></div>
-    </footer>
-  </main>
+</main>
+<footer>
+  <div class="container"></div>
+</footer>
 
 </body>
 

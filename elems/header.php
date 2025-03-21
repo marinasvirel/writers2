@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Биографии писателей</title>
+  <meta name="description" content="<?php echo  $desc ?? 'Биографии писателей' ?>">
+  <title><?php echo  $title ?? "Биографии писателей" ?></title>
 </head>
 
 <body>
