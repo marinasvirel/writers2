@@ -1,20 +1,13 @@
 <?php
 session_start();
-?>
 
-<!DOCTYPE html>
-<html lang="ru">
+$page = isset($_GET['page']) ? $_GET['page'] : 'main';
+$path = "pages/$page.php";
 
-<?php require_once "elems/head.php" ?>
-
-<body>
-  <?php require_once "elems/header.php"; ?>
-  <main>
-    <div class="container">
-      {{content}}
-    </div>
-  </main>
-  <?php require_once "elems/footer.php"; ?>
-</body>
-
-</html>
+require_once "elems/header.php";
+if (file_exists($path)) {
+  require_once $path;
+} else {
+  echo "нет такой страницы";
+}
+require_once "elems/footer.php";
