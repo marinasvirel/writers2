@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php echo  $desc ?? 'Биографии писателей' ?>">
   <title><?php echo  $title ?? "Биографии писателей" ?></title>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body>
@@ -15,10 +16,11 @@
         <?php
         if (array_key_exists('login', $_SESSION)) {
           if ($_SESSION['login'] == "admin") {
-            require_once "forms/exit-form.php";
+            require_once $_SERVER['DOCUMENT_ROOT'] . "/forms/exit-form.php";
+            echo "<a href=\"?page=admin\">Админка</a>";
           }
         } else {
-          require_once "forms/log-form.php";
+          require_once $_SERVER['DOCUMENT_ROOT'] . "/forms/log-form.php";
         }
         ?>
       </div>
